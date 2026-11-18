@@ -1,0 +1,8 @@
+Run parameters:
+  output_dir:  ./my_scripts/outputs/A2A_200_6_13_PIP2_c1
+  num_samples: 100
+  batch_size:  128
+  num_steps:   200
+  num_batches: 1
+  CUDA_VISIBLE_DEVICES: 1
+  entities: [('Protein', 1), ('Ligand', 6), ('Ligand', 13), ('Ligand', 1)]
