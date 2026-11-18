@@ -1,0 +1,55 @@
+# Adenosine A2A receptor + cholesterol, with active-state microswitch contacts.
+# Source: D'Amore et al., Chem 2024 (doi:10.1016/j.chempr.2024.08.004).
+# The paper's numbering is offset by 5 from this construct (paper residue N = res_id N-5).
+entities:
+  - entity_type: protein
+    sequence: SSVYITVELAIAVLAILGNVLVCWAVWLNSNLQNVTNYFVVSLAAADIAVGVLAIPFAITISTGFCAACHGCLFIACFVLVLTQSSIFSLLAIAIDRYIAIRIPLRYNGLVTGTRAKGIIAICWVLSFAIGLTPMLGWNNCGQPKEGKNHSQGCGEGQVACLFEDVVPMNYMVYFNFFACVLVPLLLMLGVYLRIFLAARRQLKQMESQPLPGERARSTLQKEVHAAKSLAIIVGLFALCWLPLHIINCFTFFCPDCSHAPLWLMYLAIVLSHTNSVVNPFIYAYRIREFRQTFRKIIRS
+    asym_ids: A
+  - asym_ids:
+    - L1
+    - L2
+    - L3
+    - L4
+    - L5
+    - L6
+    ccd_code: CLR
+    entity_type: ligand
+  - asym_ids:
+    - M1
+    - M2
+    - M3
+    - M4
+    - M5
+    - M6
+    - M7
+    - M8
+    - M9
+    - M10
+    - M11
+    - M12
+    - M13
+    - M14
+    ccd_code: POV
+    entity_type: ligand
+
+# Residue tokens are one per residue, so max_distance is token-level, not side-chain
+# heavy-atom distance; values are looser than a 4 A salt bridge on purpose.
+contacts:
+  # Active ionic lock (AIL): TM5 R205 -- TM6 E228 (paper R205/E228)
+  - token1: {asym_id: A, res_id: 200}
+    token2: {asym_id: A, res_id: 223}
+    max_distance: 9.0
+  # Y-Y lock: TM5 Y197 -- TM7 NPxxY Y288, direct/water-bridged H-bond
+  - token1: {asym_id: A, res_id: 192}
+    token2: {asym_id: A, res_id: 283}
+    max_distance: 9.0
+  # TM6-TM5 hydrophobic packing hub (active state): L235-L194, I238-L198, V239-F201
+  - token1: {asym_id: A, res_id: 230}
+    token2: {asym_id: A, res_id: 189}
+    max_distance: 8.0
+  - token1: {asym_id: A, res_id: 233}
+    token2: {asym_id: A, res_id: 193}
+    max_distance: 8.0
+  - token1: {asym_id: A, res_id: 234}
+    token2: {asym_id: A, res_id: 196}
+    max_distance: 8.0
